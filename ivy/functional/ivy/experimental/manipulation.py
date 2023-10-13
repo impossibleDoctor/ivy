@@ -2790,3 +2790,12 @@ trim_zeros.mixed_backend_wrappers = {
     ),
     "to_skip": ("inputs_to_ivy_arrays",),
 }
+
+
+def dynamic_partition(
+    arr: Union[ivy.Array, ivy.NativeArray],
+    partitons: Union[ivy.Array, ivy.NativeArray],
+    num_partitions: int,
+    /,
+) -> ivy.Array:
+    raise ivy.utils.exceptions.IvyNotImplementedException()

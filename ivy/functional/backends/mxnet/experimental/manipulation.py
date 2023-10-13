@@ -192,3 +192,11 @@ def concat_from_sequence(
     out: Optional[Union[(None, mx.ndarray.NDArray)]] = None,
 ) -> Union[(None, mx.ndarray.NDArray)]:
     raise IvyNotImplementedException()
+
+
+def dynamic_partitions(
+    x,
+    partitions,
+    num_partitions,
+) -> Optional[mx.ndarray.NDArray]:
+    raise IvyNotImplementedException()

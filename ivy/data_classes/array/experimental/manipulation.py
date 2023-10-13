@@ -1429,3 +1429,11 @@ class _ArrayWithManipulationExperimental(abc.ABC):
         changes.
         """
         return ivy.put_along_axis(self._data, indices, values, axis, mode=mode, out=out)
+
+    def dynamic_partition(
+        self: ivy.Array,
+        partitions,
+        num_partitions: int,
+        /,
+    ) -> List[ivy.Array]:
+        pass

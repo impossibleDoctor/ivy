@@ -493,3 +493,12 @@ def trim_zeros(a: torch.Tensor, /, *, trim: Optional[str] = "bf") -> torch.Tenso
             else:
                 last = last - 1
     return a[first:last]
+
+
+def dynamic_partition(
+    x: torch.Tensor,
+    partition: torch.Tensor,
+    num_partitions: int,
+    /,
+) -> List[torch.Tensor]:
+    raise ivy.utils.exceptions.IvyNotImplementedException()

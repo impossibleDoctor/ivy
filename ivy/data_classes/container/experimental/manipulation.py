@@ -15,6 +15,7 @@ from numbers import Number
 
 # local
 import ivy
+from ivy import Container
 from ivy.data_classes.container.base import ContainerBase
 
 
@@ -3934,6 +3935,28 @@ class _ContainerWithManipulationExperimental(ContainerBase):
         [8, 3]
         """
         return self._static_trim_zeros(self, trim=trim)
+
+    @staticmethod
+    def _static_dynamic_partition(
+        x: Union[ivy.Array, ivy.NativeArray, ivy.Container],
+        partitions: Union[ivy.Array, ivy.NativeArray, ivy.Container],
+        num_partitions: int,
+        /,
+    ) -> List[Container | Container, Container | Container] | Container | Container:
+        return ContainerBase.cont_multi_map_in_function(
+            "dynamic_partition",
+            x,
+            partitions,
+            num_partitions,
+        )
+
+    def dynamic_partition(
+        self: Union[ivy.Array, ivy.NativeArray, ivy.Container],
+        partitions: Union[ivy.Array, ivy.NativeArray, ivy.Container],
+        num_partitions: int,
+        /,
+    ) -> List[ivy.Container]:
+        return self._static_dynamic_partition(self, partitions, num_partitions)
 
 
 def concat_from_sequence(

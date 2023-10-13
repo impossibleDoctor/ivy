@@ -416,3 +416,7 @@ def fill_diagonal(
 
 def trim_zeros(a: JaxArray, /, *, trim: Optional[str] = "bf") -> JaxArray:
     return jnp.trim_zeros(a, trim=trim)
+
+
+def dynamic_partition(x: JaxArray, partitions, num_partitions, /) -> JaxArray:
+    raise ivy.utils.exceptions.IvyNotImplementedException()

@@ -735,6 +735,10 @@ def test_dstack(*, dtype_and_x, test_flags, backend_fw, fn_name, on_device):
     )
 
 
+def test_dynamic_partition():
+    pass
+
+
 @handle_test(
     fn_tree="expand",
     dtype_and_x=helpers.dtype_and_values(

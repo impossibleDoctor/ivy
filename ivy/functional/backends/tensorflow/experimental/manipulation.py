@@ -431,3 +431,7 @@ def trim_zeros(a: tf.Tensor, /, *, trim: Optional[str] = "bf") -> tf.Tensor:
         last = tf.minimum(last, tf.cast(tf.shape(a)[0], tf.int64))
 
     return a[first:last]
+
+
+def dynamic_partition(data, partitions, num_partitions: int, /):
+    return tf.dynamic_partition(data, partitions, num_partitions)

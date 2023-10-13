@@ -742,3 +742,12 @@ put_along_axis.partial_mixed_handler = lambda *args, mode="assign", **kwargs: mo
     "sum",
     "mul",
 ]
+
+
+def dynamic_partition(
+    arr: paddle.Tensor,
+    partitions,
+    num_partitions: int,
+    /,
+) -> List[paddle.Tensor]:
+    raise ivy.utils.exceptions.IvyNotImplementedException()

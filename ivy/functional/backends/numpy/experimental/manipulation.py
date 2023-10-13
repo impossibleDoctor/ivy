@@ -518,3 +518,11 @@ def put_along_axis(
 put_along_axis.partial_mixed_handler = lambda *args, mode=None, **kwargs: mode in [
     "replace",
 ]
+
+
+def dynamic_partition(
+    arr: np.ndarray,
+    partitions,
+    num_partitions: int,
+) -> List[np.array]:
+    raise ivy.utils.exceptions.IvyNotImplementedException()
